@@ -104,7 +104,6 @@ projeto-flappy-bird/
 git clone https://github.com/seu-usuario/projeto-flappy-bird.git
 cd projeto-flappy-bird
 ```
-
 2. Abra o arquivo `flappy.html` no navegador ou use um servidor local:
 ```bash
 # Usando Python
@@ -122,8 +121,6 @@ npx serve .
 4. **Pontuação**: Cada barreira atravessada adiciona 1 ponto
 5. **Game Over**: Ao colidir, o jogo termina e você pode reiniciar
 
-## 🔧 Desenvolvimento
-
 ### Estrutura de Classes
 - **Modularidade**: Cada classe tem responsabilidade específica
 - **Encapsulamento**: Métodos privados e públicos bem definidos
@@ -131,7 +128,7 @@ npx serve .
 - **Polimorfismo**: Interfaces consistentes entre classes
 
 ### Otimizações Implementadas
-- **Performance**: Animações otimizadas com `requestAnimationFrame`
+
 - **Memória**: Gerenciamento eficiente de elementos DOM
 - **Responsividade**: Layout adaptável a diferentes resoluções
 - **Acessibilidade**: Suporte a navegação por teclado
@@ -148,10 +145,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 - Adicionar novas funcionalidades
 - Melhorar a documentação
 
-## 📞 Contato
 
-Para dúvidas ou sugestões, entre em contato através dos issues do GitHub.
-
----
-
-**Desenvolvido com ❤️ usando tecnologias web modernas** 
