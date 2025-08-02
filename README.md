@@ -101,7 +101,7 @@ projeto-flappy-bird/
 ### Instalação
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/projeto-flappy-bird.git
+git clone https://github.com/joaogabrieldev/projeto-flappy-bird.git
 cd projeto-flappy-bird
 ```
 2. Abra o arquivo `flappy.html` no navegador ou use um servidor local:
