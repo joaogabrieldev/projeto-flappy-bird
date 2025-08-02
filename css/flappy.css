@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Pixel";
+  src: url(../fonts/Pixel.ttf);
+}
+
+@font-face {
+  font-family: "Symtext";
+  src: url(../fonts/Symtext.ttf);
+}
+
+@keyframes Sumir {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes Aparecer {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+[wm-flappy] {
+  position: relative;
+  border: 5px solid white;
+  height: 700px;
+  width: 1200px;
+  margin: 15px;
+  background-color: deepskyblue;
+  /* Qualquer coisa que esteja fora da div fica escondido */
+  overflow: hidden;
+  /* filter: saturate(0%); */
+  filter: saturate(none);
+}
+
+.passaro {
+  position: absolute;
+  width: 60px;
+  left: calc(50% - 30px);
+  /* bottom: 50%; */
+  user-select: none;
+}
+
+.par-de-barreiras {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.barreira {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barreira .borda {
+  height: 30px;
+  width: 130px;
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border: 2px solid #000;
+}
+
+.barreira .corpo {
+  height: 150px;
+  width: 110px;
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.progresso {
+  user-select: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Pixel";
+  font-size: 70px;
+  z-index: 100;
+}
+
+.botao-iniciar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0px 0px 66px #fff);
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+  z-index: 3;
+}
+
+.circulo {
+  border: 2px solid #fff;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+.triangulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangulinho {
+  user-select: none;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  color: #000;
+  position: relative;
+  font-size: 70px;
+  top: -22px;
+  left: 12px;
+  transform: rotate(90deg);
+  width: 300px;
+  height: 240px;
+  color: #00bfff;
+  /* background-color: red; */
+}
+
+.circulo:hover {
+  background-color: #fff085;
+  border: 2px solid #fff085;
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+.botao-iniciar:hover {
+  filter: drop-shadow(0px 0px 66px #fff085);
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+.triangulinho:hover {
+  cursor: pointer;
+}
+
+.div-contain-texto-inicio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.div-texto-inicio {
+  position: relative;
+  top: -170px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  /* background-color: red; */
+}
+
+.texto-inicio {
+  user-select: none;
+
+  color: white;
+  filter: drop-shadow(0px 0px 66px white);
+  
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+.div-textoPerdeu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.textoPerdeu {
+  user-select: none;
+  
+  position: relative;
+  top: -720px;
+  left: 25px;
+
+  font-family: "Symtext";
+  font-size: 100px;
+  text-align: center;
+
+  filter: drop-shadow(0px 0px 40px #ff0000);
+
+  color: #ff0000;
+
+  opacity: 0%;
+}
