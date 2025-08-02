@@ -176,7 +176,7 @@ function TextoPerdeu() {
   textoPerdeu.style.animationDuration = "3s";
   textoPerdeu.style.animationTimingFunction = "cubic-bezier(0.30, 0.63, 0.51, 0.85)";
   textoPerdeu.style.opacity = '100%'
-
+  setTimeout(() => {}, 2000)
 }
 
 
@@ -222,6 +222,14 @@ class FlappyBird {
       }, 20);
     };
   }
+}
+
+function mouseEntrou2() {
+  
+}
+
+if (window.location.reload) {
+    console.log("Atualizouuuu!")
 }
 
 let textoInicio = document.querySelector(".texto-inicio");

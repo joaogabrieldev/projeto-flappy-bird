@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/*? Fontes */
 @font-face {
   font-family: "Pixel";
   src: url(../fonts/Pixel.ttf);
@@ -12,6 +13,7 @@
   src: url(../fonts/Symtext.ttf);
 }
 
+/*? Animações */
 @keyframes Sumir {
   0% {
     opacity: 100%;
@@ -21,7 +23,6 @@
     opacity: 0%;
   }
 }
-
 @keyframes Aparecer {
   0% {
     opacity: 0%;
@@ -31,12 +32,31 @@
     opacity: 100%;
   }
 }
+@keyframes GirarIcone {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes InvertidoGirarIcone {
+  0% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*? CSS do Fundo do Jogo */
 [wm-flappy] {
   position: relative;
   border: 5px solid white;
-  height: 700px;
-  width: 1200px;
+  height: 2000px;
+  width: 1000px;
   margin: 15px;
   background-color: deepskyblue;
   /* Qualquer coisa que esteja fora da div fica escondido */
@@ -45,6 +65,7 @@
   filter: saturate(none);
 }
 
+/*? CSS da imagem do Bird */
 .passaro {
   position: absolute;
   width: 60px;
@@ -128,7 +149,7 @@
   color: #000;
   position: relative;
   font-size: 70px;
-  top: -22px;
+  top: -23px;
   left: 12px;
   transform: rotate(90deg);
   width: 300px;
@@ -152,6 +173,56 @@
   cursor: pointer;
 }
 
+/*  */
+.botao-reiniciar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0px 0px 66px red);
+  /* background-color: blue; */
+
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+  z-index: 3;
+
+  cursor: pointer;
+}
+
+.circulo-reiniciar {
+  border: 2px solid red;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+.div-icone-reload-reiniciar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* background-color: green; */
+}
+
+.icone-reload-reiniciar {
+  position: relative;
+  fill: white;
+  stroke: white;
+
+  /* background-color: yellow; */
+
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+/* .icone-reload-reiniciar:hover{
+    transform: rotate(90deg) ;
+    transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+} */
+
+/*  */
 .div-contain-texto-inicio {
   position: absolute;
   top: 50%;
@@ -174,7 +245,7 @@
 
   color: white;
   filter: drop-shadow(0px 0px 66px white);
-  
+
   transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
 }
 
@@ -187,9 +258,9 @@
 
 .textoPerdeu {
   user-select: none;
-  
+
   position: relative;
-  top: -720px;
+  top: -225px;
   left: 25px;
 
   font-family: "Symtext";
