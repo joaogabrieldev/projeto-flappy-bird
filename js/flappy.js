@@ -63,8 +63,10 @@ class ConjuntoBarreiras {
       new ParDeBarreiras(altura, abertura, largura + espaco * 3),
     ];
 
-    //- Deixar o Usuário escolher o deslocamento através de um imput
+    //? Velocidade do Pássaro
     const deslocamento = 3;
+    //- Deixar o Usuário escolher o deslocamento através de um imput
+
     this.animar = () => {
       this.pares.forEach((par) => {
         par.setX(par.getX() - deslocamento);
@@ -99,7 +101,10 @@ class Passaro {
     window.onkeyup = (event) => (voando = false);
 
     this.animar = () => {
+      //? Velocidade de Subida
       const novoY = this.getY() + (voando ? 8 : -5);
+
+      //? Altura Máxima do Jogo
       const alturaMaxima = alturaJogo - this.elemento.clientHeight;
 
       if (novoY <= 0) {
@@ -185,7 +190,6 @@ function TextoPerdeu() {
   textoPerdeu.style.animationTimingFunction =
     "cubic-bezier(0.30, 0.63, 0.51, 0.85)";
   textoPerdeu.style.opacity = "100%";
-  setTimeout(() => {}, 2000);
 }
 
 //? Função que representa de fato o jogo
@@ -198,7 +202,8 @@ class FlappyBird {
     const largura = areaDoJogo.clientWidth;
 
     const progresso = new Progresso();
-    // Ver maneira de ajustar o 3º e o 4º parametros de acordo com nivel de dificuldade que o usuario decidir (Adicionar Input para isso)
+
+    //- Ver maneira de ajustar o 3º e o 4º parametros de acordo com nivel de dificuldade que o usuario decidir (Adicionar Input para isso)
     const barreiras = new ConjuntoBarreiras(altura, largura, 200, 400, () =>
       progresso.atualizarPontos(++pontos)
     );
@@ -235,8 +240,9 @@ class FlappyBird {
 
           botaoReiniciar.style.opacity = "100%";
         }
-      }, 20);
+      }, 20 /* Velocidade do jogo (Funciona como uns FPS reverso) */);
     };
+    //- Adicionar Input que deixa o usuario escolher o nivel de dificuldade do jogo, fazendo com que ele fique mais rapido entre outros
   }
 }
 
