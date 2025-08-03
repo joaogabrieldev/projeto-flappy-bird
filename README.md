@@ -1,5 +1,7 @@
 # 🐦 Projeto Flappy Bird
 
+**🎯 Teste Agora:** [Flappy Bird - João Gabriel](https://flappy-bird-eta-indol.vercel.app/)
+
 Uma recriação completa do clássico jogo Flappy Bird desenvolvida com tecnologias web modernas.
 
 ## 📋 Descrição
@@ -93,6 +95,9 @@ projeto-flappy-bird/
 - **Fonte Símbolos**: Symtext.ttf (Elementos especiais)
 
 ## 🚀 Como Executar
+
+### 🎯 Teste Agora!
+**🎮 Disponível em:** [Flappy Bird - João Gabriel](https://flappy-bird-eta-indol.vercel.app/)
 
 ### Pré-requisitos
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
