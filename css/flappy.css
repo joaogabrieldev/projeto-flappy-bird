@@ -72,8 +72,10 @@
   left: calc(50% - 30px);
   /* bottom: 50%; */
   user-select: none;
+  /* background-color: red; */
 }
 
+/*? Configurações do Par de Barreias (Cima e Baixo) */
 .par-de-barreiras {
   position: absolute;
   top: 0;
@@ -83,12 +85,14 @@
   justify-content: space-between;
 }
 
+/*? Confinguração de uma barreira apenas, de forma individual */
 .barreira {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/*? Configuração da parte da "cabeça" da barreira */
 .barreira .borda {
   height: 30px;
   width: 130px;
@@ -96,6 +100,7 @@
   border: 2px solid #000;
 }
 
+/*? Configuração da parte do corpo da barreira */
 .barreira .corpo {
   height: 150px;
   width: 110px;
@@ -104,6 +109,7 @@
   border-right: 2px solid #000;
 }
 
+/*? Configuração da Pontuação  */
 .progresso {
   user-select: none;
   position: absolute;
@@ -114,6 +120,34 @@
   z-index: 100;
 }
 
+/*? Configuração do Texto que fica em cima do botão */
+.div-contain-texto-inicio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.div-texto-inicio {
+  position: relative;
+  top: -170px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  /* background-color: red; */
+}
+
+.texto-inicio {
+  user-select: none;
+
+  color: white;
+  filter: drop-shadow(0px 0px 66px white);
+
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+}
+
+/*? Todas as configurações do Botão de Iniciar */
 .botao-iniciar {
   position: absolute;
   top: 50%;
@@ -173,7 +207,12 @@
   cursor: pointer;
 }
 
-/*  */
+/*? Botão para Reiniciar o Jogo */
+.div-botao-reiniciar {
+  position: relative;
+  top: -310px;
+}
+
 .botao-reiniciar {
   position: absolute;
   top: 50%;
@@ -187,6 +226,9 @@
   z-index: 3;
 
   cursor: pointer;
+
+  opacity: 0%;
+  display: none;
 }
 
 .circulo-reiniciar {
@@ -199,10 +241,18 @@
 }
 
 .div-icone-reload-reiniciar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  left: -2px;
+  top: -3px;
+
+  height: 200px;
+  width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
 
   /* background-color: green; */
 }
@@ -217,38 +267,13 @@
   transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
 }
 
-/* .icone-reload-reiniciar:hover{
-    transform: rotate(90deg) ;
-    transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
-} */
-
-/*  */
-.div-contain-texto-inicio {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.div-texto-inicio {
-  position: relative;
-  top: -170px;
-  text-align: center;
-  font-size: 25px;
-  color: white;
-  /* background-color: red; */
-}
-
-.texto-inicio {
-  user-select: none;
-
-  color: white;
-  filter: drop-shadow(0px 0px 66px white);
-
+.div-icone-reload-reiniciar:hover {
+  transform: rotate(90deg);
   transition: all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+  top: -3px;
 }
 
+/*? Configurações do Texto de Derrota */
 .div-textoPerdeu {
   position: absolute;
   top: 50%;
@@ -264,7 +289,7 @@
   left: 25px;
 
   font-family: "Symtext";
-  font-size: 100px;
+  font-size: 80px;
   text-align: center;
 
   filter: drop-shadow(0px 0px 40px #ff0000);
@@ -272,4 +297,31 @@
   color: #ff0000;
 
   opacity: 0%;
+}
+
+/*? Configurações do "Rodapé" com contatos */
+.div-autoria-contatos {
+  margin-top: -20px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.div-contatos {
+  display: block;
+  margin: auto;
+  /* background-color: red; */
+  width: 108px;
+}
+
+.icone-linkedin {
+  filter: drop-shadow(0px 0px 20px #007dfa5d);
+}
+
+.icone-github {
+  filter: drop-shadow(0px 0px 20px #8b8b8b5d);
+}
+
+.nomeAutoria {
+  transition: all 0.2s cubic-bezier(0.3, 0.63, 0.51, 0.85);
+  color: #fff;
 }

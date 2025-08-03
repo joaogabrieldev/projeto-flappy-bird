@@ -1,9 +1,11 @@
+//? Função para a criação de um elemento que ja vem com tag
 function NovoElemento(tagName, className) {
   const element = document.createElement(tagName);
   element.className = className;
   return element;
 }
 
+//? Configuração da rotação da barreira
 class Barreira {
   constructor(reversa = false) {
     this.elemento = NovoElemento("div", "barreira");
@@ -21,6 +23,7 @@ class Barreira {
 // barreira.setAltura(300);
 // document.querySelector("[wm-flappy]").appendChild(barreira.elemento);
 
+//? Configuração e Interatividade da altura e abertura do par de barreiras
 class ParDeBarreiras {
   constructor(altura, abertura, x) {
     this.elemento = NovoElemento("div", "par-de-barreiras");
@@ -50,6 +53,7 @@ class ParDeBarreiras {
 // const barreira = new ParDeBarreiras(700, 200, 400);
 // document.querySelector("[wm-flappy]").appendChild(barreira.elemento);
 
+//? Definição de um conjunto de 4 pares de barreira que se repetem durante o jogo com parametros alterados
 class ConjuntoBarreiras {
   constructor(altura, largura, abertura, espaco, notificarPonto) {
     this.pares = [
@@ -81,6 +85,7 @@ class ConjuntoBarreiras {
   }
 }
 
+//? Animação e Interatividade do Passaro
 class Passaro {
   constructor(alturaJogo) {
     let voando = false;
@@ -110,6 +115,7 @@ class Passaro {
   }
 }
 
+//? Interatividade dos Pontos
 class Progresso {
   constructor() {
     this.elemento = NovoElemento("span", "progresso");
@@ -138,6 +144,7 @@ class Progresso {
 //   passaro.animar();
 // }, 17);
 
+//? Função para verificar a posição do passaro e barreira, para calcular colisão
 function estaoSobrepostos(elementoA, elementoB) {
   const ladoA = elementoA.getBoundingClientRect();
   const ladoB = elementoB.getBoundingClientRect();
@@ -153,6 +160,7 @@ function estaoSobrepostos(elementoA, elementoB) {
   return horizonal && vertical;
 }
 
+//? Configuração da Colisão
 function colidiu(passaro, barreiras) {
   let colidiu = false;
   barreiras.pares.forEach((parDeBarreiras) => {
@@ -168,17 +176,17 @@ function colidiu(passaro, barreiras) {
   return colidiu;
 }
 
+//? Animações do texto de Derrota
 const textoPerdeu = document.querySelector(".textoPerdeu");
 
 function TextoPerdeu() {
-  
   textoPerdeu.style.animationName = "Aparecer";
-  textoPerdeu.style.animationDuration = "3s";
-  textoPerdeu.style.animationTimingFunction = "cubic-bezier(0.30, 0.63, 0.51, 0.85)";
-  textoPerdeu.style.opacity = '100%'
-  setTimeout(() => {}, 2000)
+  textoPerdeu.style.animationDuration = "2.5s";
+  textoPerdeu.style.animationTimingFunction =
+    "cubic-bezier(0.30, 0.63, 0.51, 0.85)";
+  textoPerdeu.style.opacity = "100%";
+  setTimeout(() => {}, 2000);
 }
-
 
 //? Função que representa de fato o jogo
 class FlappyBird {
@@ -217,21 +225,22 @@ class FlappyBird {
           areaDoJogo.style.transition =
             "all 0.45s cubic-bezier(0.14, 0.68, 0.32, 0.95)";
           areaDoJogo.style.filter = "saturate(0%)";
-          
+          botaoReiniciar.style.transition =
+            "all 0.25s cubic-bezier(0.3, 0.63, 0.51, 0.85);";
+          botaoReiniciar.style.display = "block";
+          botaoReiniciar.style.animationName = "Aparecer";
+          botaoReiniciar.style.animationDuration = "2.5s";
+          botaoReiniciar.style.animationTimingFunction =
+            "cubic-bezier(0.3, 0.63, 0.51, 0.85);";
+
+          botaoReiniciar.style.opacity = "100%";
         }
       }, 20);
     };
   }
 }
 
-function mouseEntrou2() {
-  
-}
-
-if (window.location.reload) {
-    console.log("Atualizouuuu!")
-}
-
+//? Interatividade do botão de iniciar junto com o texto em cima dele
 let textoInicio = document.querySelector(".texto-inicio");
 
 function mouseEntrou() {
@@ -245,6 +254,38 @@ function mouseSaiu() {
   textoInicio.style.color = "";
 }
 
+const botaoReiniciar = document.querySelector(".botao-reiniciar");
+
+function reiniciarJogo() {
+  window.location.reload();
+  setTimeout(() => {
+    botaoReiniciar.style.display = "none";
+  }, 1000);
+}
+
+//? Hover do Nome "João Gabriel"
+const nomeAutoria = document.querySelector(".nomeAutoria");
+function mouseEntrou2() {
+  nomeAutoria.style.color = "#2c77c2";
+  nomeAutoria.style.filter = "drop-shadow(0px 0px 20px #007dfa)";
+}
+
+function mouseSaiu2() {
+  nomeAutoria.style.color = "";
+  nomeAutoria.style.filter = "";
+}
+
+function mouseEntrou3() {
+  nomeAutoria.style.color = "#adadadff";
+  nomeAutoria.style.filter = "drop-shadow(0px 0px 20px #8b8b8b)";
+}
+
+function mouseSaiu3() {
+  nomeAutoria.style.color = "";
+  nomeAutoria.style.filter = "";
+}
+
+//? Interatividade do botão de iniciar
 const botaoIniciar = document.querySelector(".botao-iniciar");
 
 function iniciarJogo() {
