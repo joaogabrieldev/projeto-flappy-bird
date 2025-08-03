@@ -103,19 +103,10 @@ projeto-flappy-bird/
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
 - Servidor local (opcional, para desenvolvimento)
 
-### Instalação
-1. Clone o repositório:
+### Clone o repositório:
 ```bash
 git clone https://github.com/joaogabrieldev/projeto-flappy-bird.git
 cd projeto-flappy-bird
-```
-2. Abra o arquivo `flappy.html` no navegador ou use um servidor local:
-```bash
-# Usando Python
-python -m http.server 8000
-
-# Usando Node.js
-npx serve .
 ```
 
 ## 🎯 Como Jogar
