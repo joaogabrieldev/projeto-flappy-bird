@@ -53,6 +53,8 @@ class ParDeBarreiras {
 // const barreira = new ParDeBarreiras(700, 200, 400);
 // document.querySelector("[wm-flappy]").appendChild(barreira.elemento);
 
+let selectDificuldade = document.getElementById("select-dificuldade");
+
 //? Definição de um conjunto de 4 pares de barreira que se repetem durante o jogo com parametros alterados
 class ConjuntoBarreiras {
   constructor(altura, largura, abertura, espaco, notificarPonto) {
@@ -64,7 +66,7 @@ class ConjuntoBarreiras {
     ];
 
     //? Velocidade do Pássaro
-    const deslocamento = 3;
+    const deslocamento = 5;
     //- Deixar o Usuário escolher o deslocamento através de um imput
 
     this.animar = () => {
@@ -101,7 +103,7 @@ class Passaro {
     window.onkeyup = (event) => (voando = false);
 
     this.animar = () => {
-      //? Velocidade de Subida
+      //? Velocidade de Subida e Descida
       const novoY = this.getY() + (voando ? 8 : -5);
 
       //? Altura Máxima do Jogo
